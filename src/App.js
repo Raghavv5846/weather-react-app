@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-
+import background from './images/weather.jpg';
+import React from 'react'
+import Searchbox from './components/Searchbox';
 function App() {
+  const apiKey=process.env.REACT_APP_API_KEY
+  
+
+
+
+
+  document.body.style.backgroundImage=`url('${background}')`;
+
+  document.body.style.backgroundSize='cover';
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Searchbox apiKey={apiKey} search="search"/>
+    </>
   );
 }
 
