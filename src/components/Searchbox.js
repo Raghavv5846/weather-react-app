@@ -19,7 +19,8 @@ const handleOnclick=async(e)=>{
         console.log(err);
 })
     let text1=text;
-    let url=`http://api.weatherapi.com/v1/current.json?key=6d07d616f2254545999110000221507&q=${text1}`;
+    console.log(props);
+    let url=`http://api.weatherapi.com/v1/current.json?key=${props.apiKey}&q=${text1}`;
     let data=await fetch(url);
     let parsed=await data.json()
     if(parsed.current.condition.text==='Sunny'){
